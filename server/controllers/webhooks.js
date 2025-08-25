@@ -1,5 +1,6 @@
 import { Webhook } from "svix";
 import User from "../models/User.js";
+import { response } from "express";
 
 //API Controller Function to Manage Clerk User with database
 
@@ -54,3 +55,8 @@ export const clerkWebhooks= async(req,res)=>{
     res.json({success:false,message:error.message})
 
 }}
+
+
+export const stripeWebhooks = async(request,response)=>{
+    
+}
