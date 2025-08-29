@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import uniquid from "uniqid";
+import nanoid from "nanoid";
 import Quill from "quill";
 import { assets } from "../../assets/assets";
 import { AppContext } from "../../context/AppContext";
@@ -50,7 +50,7 @@ const AddCourse = () => {
       const title = prompt("Enter Chapter Name:");
       if (title) {
         const newChapter = {
-          chapterId: uniquid(),
+          chapterId: nanoid(),
           ChapterTitle: title, // fixed key: chapterTitle (not chaptertitle)
           chapterContent: [],
           collapsed: false,
