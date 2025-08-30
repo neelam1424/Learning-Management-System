@@ -11,9 +11,15 @@ import userRouter from './routes/userRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-
+const allowedOrigins = [
+  'https://learning-management-system-frontend-psi-six.vercel.app', // your frontend domain
+];
 // Middlewares
-app.use(cors());
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true
+}));
 app.use(express.json());
 app.use(clerkMiddleware());
 
